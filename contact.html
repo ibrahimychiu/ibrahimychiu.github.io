@@ -129,26 +129,12 @@
 
             <hr>
 
-            <!-- Mail -->
-            <h3>Mail</h3>
-            <div class="indented map-container">
-                <p>
-                    Attn: Ibrahim Chiu<br>
-                    Department of Political Science<br>
-                    1414 Social Sciences Building<br>
-                    267 19th Ave S<br>
-                    Minneapolis, MN 55455
-                </p>
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.6310318087208!2d-93.24529322339171!3d44.97149067107016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b32d41b597c5e9%3A0x572c0b38db915df5!2sSocial%20Sciences%20Building!5e0!3m2!1szh-TW!2sus!4v1732144512535!5m2!1szh-TW!2sus" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-            <hr>
+         
 
             <!-- Office Hour -->
             <h3>Office Hour Appointment</h3>
             <div class="indented">
-                <p> Spring 2025: POL4403W with Professor Hilbinks </p>
+                <p> Spring 2025: POL4403W with Professor Hilbinks (Each office hour is 30 minutes)</p>
                 <form action="mailto:chiu0103@umn.edu?subject=Office%20Hour%20Request" method="POST" enctype="text/plain">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -156,8 +142,9 @@
                     <label for="course">Course</label>
                     <input type="text" id="course" name="course" placeholder="Enter your course name" required>
 
-                    <label for="preferred-time">Preferred Time</label>
-                    <input type="datetime-local" id="preferred-time" name="preferred-time" required>
+                    <label for="preferred-time">Preferred Time </label>
+                    <input type="text" id="preferred-time1" name="preferred-time1" placeholder="e.g., Jan.16, 2025 (Thu) 2-4pm, Jan.17, 2025 (Fri) 2-4pm, and so on." required>
+
 
                     <label for="method">Preferred Method</label>
                     <select id="method" name="method" required>
