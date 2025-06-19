@@ -7,23 +7,24 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
-            font-family: Georgia, sans-serif;
+            font-family: Georgia, serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #eae7dc; 
+            background-color: #F5F6FA;
+            color: #2E3A59;
         }
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
-            background: #fff;
+            background: #ffffff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
         header {
-            background: #6c4f37; /* Dark brown */
-            color: #fff;
+            background: #3A5A77;
+            color: #ffffff;
             padding: 10px 0;
             text-align: center;
         }
@@ -35,18 +36,19 @@
             margin-top: 10px;
         }
         nav a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
             margin: 0 10px;
         }
         nav a:hover {
             text-decoration: underline;
+            color: #A7C0CD;
         }
         section {
             margin: 20px 0;
         }
-        section h2 {
-            border-bottom: 2px solid #6c4f37; /* Brownish border */
+        section h2, section h3 {
+            border-bottom: 2px solid #3A5A77;
             padding-bottom: 5px;
         }
         .indented {
@@ -54,16 +56,16 @@
         }
         .map-container {
             display: flex;
-            justify-content: space-between; 
+            justify-content: space-between;
             align-items: flex-start;
         }
         .map-container p {
-            flex: 1; 
+            flex: 1;
         }
         .map-container iframe {
-            flex: 0 0 300px; 
-            height: auto; 
-            margin-left: 20px; 
+            flex: 0 0 300px;
+            height: auto;
+            margin-left: 20px;
             border: 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -74,7 +76,7 @@
             display: block;
             margin: 10px 0 5px;
             font-weight: bold;
-            color: #6c4f37; /* Brown label text */
+            color: #3A5A77;
         }
         input, select, textarea {
             width: 100%;
@@ -83,10 +85,10 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1em;
-            background-color: #f2f2f2; /* Light gray background for inputs */
+            background-color: #f2f2f2;
         }
         button {
-            background-color: #6c4f37; /* Dark brown button */
+            background-color: #3A5A77;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -95,14 +97,14 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: #8e6a4b; /* Lighter brown on hover */
+            background-color: #5B7492;
         }
         footer {
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
-            background: #6c4f37; /* Dark brown footer */
-            color: #fff;
+            background: #3A5A77;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -119,14 +121,14 @@
     <div class="container">
         <section>
             <h2>Contact Me</h2>
-            
+
             <!-- Email -->
             <h3>Email</h3>
             <div class="indented">
                 <p>If you have any questions related to my research, Ph.D. application, collaboration, or simply wish to schedule a chat, please feel free to email me at:</p>
                 <p>chiu0103 [at] umn [dot] edu</p>
             </div>
-    </section>
+        </section>
     </div>
     <footer>
         <p>&copy; 2024-2025 Ibrahim Chiu. All Rights Reserved.</p>
