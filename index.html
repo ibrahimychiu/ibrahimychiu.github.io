@@ -6,6 +6,10 @@
     <title>Ibrahim Chiu - Research</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <style>
         :root {
             --primary: #444444;
@@ -154,6 +158,32 @@
             display: block;
         }
 
+        /* Contact block under headshot */
+        .contact-block {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.9rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-link i {
+            font-size: 1rem;
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+            text-decoration: underline;
+        }
+
         .about-text {
             flex: 1 1 260px;
             min-width: 0;
@@ -192,6 +222,18 @@
                 <div class="about-layout">
                     <div class="about-photo">
                         <img src="headshot.jpg" alt="Portrait of Ibrahim Chiu">
+
+                        <div class="contact-block">
+                            <a href="mailto:chiu0103@umn.edu" class="contact-link">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <span>chiu0103 [at] UMN</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/yehkangchiu/en"
+                               class="contact-link" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="about-text">
