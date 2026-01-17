@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,129 +5,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ibrahim Chiu - Research</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <style>
+        :root {
+            --primary: #444444;
+            --primary-light: #777777;
+            --bg-page: #F2F2F2;
+            --text-main: #222222;
+            --card-bg: #FFFFFF;
+            --max-width: 1024px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Georgia, serif;
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: #F5F6FA;
-            color: #2E3A59;
+            font-family: "Georgia", "Times New Roman", serif;
+            line-height: 1.7;
+            background-color: var(--bg-page);
+            color: var(--text-main);
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            background: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+        .top-bar {
+            background: #999999;
+            color: var(--primary);
+            border-bottom: 1px solid #D0D0D0;
+            padding: 14px 0 10px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
-        header {
-            background: #3A5A77;
-            color: #ffffff;
-            padding: 10px 0;
-            text-align: center;
+
+        .top-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
         }
-        header h1 {
+
+        .site-title {
+            font-size: 1.9rem;
+            font-weight: normal;
             margin: 0;
-            font-size: 2em;
+            letter-spacing: 0.04em;
         }
+
         nav {
-            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: 0.95rem;
         }
+
         nav a {
-            color: #ffffff;
+            color: var(--primary);
             text-decoration: none;
-            margin: 0 10px;
+            padding: 4px 6px;
+            border-radius: 4px;
         }
-        nav a:hover {
-            text-decoration: underline;
-            color: #A7C0CD;
+
+        nav a:hover,
+        nav a:focus {
+            background-color: #D6D6D6;
+            color: var(--primary-light);
         }
-        section {
-            margin: 20px 0;
+
+        .page-wrapper {
+            max-width: var(--max-width);
+            margin: 80px auto 32px;
+            padding: 0 16px 32px;
         }
-        section h2 {
-            border-bottom: 2px solid #3A5A77;
-            padding-bottom: 5px;
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 6px;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+            padding: 24px 24px 28px;
+            border: 1px solid #E3E3E3;
         }
+
+        @media (min-width: 768px) {
+            .card {
+                padding: 30px 40px 34px;
+            }
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin: 0 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #CCCCCC;
+            font-weight: normal;
+        }
+
         ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
+
         ul li {
-            margin: 10px 0;
+            margin: 10px 0 4px;
         }
+
+        p {
+            margin: 0 0 12px;
+        }
+
         .indented {
             margin-left: 2em;
-            color: #3A5A77;
+            color: var(--primary);
         }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-            background: #3A5A77;
-            color: #ffffff;
+            padding: 10px 0 16px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #DDDDDD;
+            margin: 18px 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Ibrahim Chiu</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="cv.html">CV</a>
-            <a href="research.html">Research</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <header class="top-bar">
+        <div class="top-inner">
+            <h1 class="site-title">Ibrahim Chiu</h1>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="research.html">Research</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
-    <div class="container">
-        <section>
-            <h2>Research</h2>
-            <p>Here are some of my recent and ongoing projects:</p>
-            <ul>
-<hr>
-<li><b>When Co-optation Backfires: The Islamization Race in Malaysia (1980s–1990s)</b></li>
-           
-                <li><b>Abstract</b></li>
-                <p class="indented">How do authoritarian parties respond to ideological challenges posed by religious opposition? While existing literature predominantly focuses on repression or concession, it rarely explores mechanisms of mimicry at the discursive level. Using Malaysia as a case study, this article investigates why the United Malays National Organisation (UMNO)—a long-ruling party championing Malay supremacy—failed to neutralize the threat of the Pan-Malaysian Islamic Party (PAS) through co-optation, but instead catalyzed the Islamization of state institutions. I argue that moral panic from the middle class and the global Islamic revival compelled UMNO to engage in reclaiming/redefining national Islam. By attempting to contest legitimacy through replicating PAS's religious rhetoric, this strategy resulted in a structural convergence of discourse between the two parties. Employing a text-as-data approach on parliamentary debate records, the Hansard, from 1979 to 1998, this study calculates the cosine similarity of the two parties' political rhetoric within an Islamic subspace. Preliminary results indicate a discursive convergence emerging since early 80s. This confirms that while authoritarian parties may proactively appropriate a competitor's language for survival, this strategy ultimately creates an irreversible space for Islamic expansion within the state apparatus.
 
+    <main class="page-wrapper">
+        <div class="card">
+            <section aria-labelledby="research-heading">
+                <h2 id="research-heading">Research</h2>
+                <p>Here are some of my recent and ongoing projects:</p>
 
-This research aims to reinterpret the perspectives of Muslim minorities towards majority rule in modern democratic states. Using cross-sectional survey regression analysis, I explore the factors that influence political trust among Muslim minorities in minority-status countries.</p>
-                <li><b>Keywords</b></li>
-                <p class="indented">co-optation, Islamization, authoritarian resilience, text-as-data, discursive convergence </p>
+                <ul>
+                    <hr>
+                    <li><b>When Co-optation Backfires: The Islamization Race in Malaysia (1980s–1990s)</b></li>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        How do authoritarian parties respond to ideological challenges posed by religious opposition? While existing literature predominantly focuses on repression or concession, it rarely explores mechanisms of mimicry at the discursive level. Using Malaysia as a case study, this article investigates why the United Malays National Organisation (UMNO)—a long-ruling party championing Malay supremacy—failed to neutralize the threat of the Pan-Malaysian Islamic Party (PAS) through co-optation, but instead catalyzed the Islamization of state institutions. I argue that moral panic from the middle class and the global Islamic revival compelled UMNO to engage in reclaiming/redefining national Islam. By attempting to contest legitimacy through replicating PAS's religious rhetoric, this strategy resulted in a structural convergence of discourse between the two parties. Employing a text-as-data approach on parliamentary debate records, the Hansard, from 1979 to 1998, this study calculates the cosine similarity of the two parties' political rhetoric within an Islamic subspace. Preliminary results indicate a discursive convergence emerging since early 80s. This confirms that while authoritarian parties may proactively appropriate a competitor's language for survival, this strategy ultimately creates an irreversible space for Islamic expansion within the state apparatus.
+                        <br><br>
+                        This research aims to reinterpret the perspectives of Muslim minorities towards majority rule in modern democratic states. Using cross-sectional survey regression analysis, I explore the factors that influence political trust among Muslim minorities in minority-status countries.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">co-optation, Islamization, authoritarian resilience, text-as-data, discursive convergence</p>
 
+                    <hr>
+                    <li><b>Trust in Government in Countries with Muslim Minorities (for MPSA 2025 in Chicago, IL)</b></li>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        For Muslims, completely separating religion from the public sphere is challenging. This means that Muslims often expect the government to integrate Islamic law, customs, and various aspects of their way of life. In countries where Muslims are the majority, the existence of an Islamic government is generally considered normal. However, in countries where Muslims are not the majority but still constitute a significant portion of the population, are Muslims satisfied with government governance? This study, based on data from the World Values Survey, examines two main hypotheses: the stronger the religious devotion of Muslim minorities, the lower their trust in government; and the lower the trust Muslim minorities have in government, the stronger their belief that the government should enhance religious governance.
+                        <br><br>
+                        This research aims to reinterpret the perspectives of Muslim minorities towards majority rule in modern democratic states. Using cross-sectional survey regression analysis, I explore the factors that influence political trust among Muslim minorities in minority-status countries.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">Muslim minorities, majority rule, political trust, religious governance</p>
 
+                    <hr>
+                    <li><b>State Capacity, Accountability, and Political Trust in MENA (for MPSA 2025 in Chicago, IL)</b></li>
+                    <p>with Seng-Yee Sin and Min-Hua Huang</p>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        The Middle East and North Africa (MENA) region has seen a resurgence of autocratization in the years following the Arab Spring, with many countries now under leaders who have held power for over a decade, such as Morsi in Egypt, Erdoğan in Turkey, and Saied in Tunisia. In the face of this renewed autocratization, how do the people of the MENA region—who once demanded democratization—feel about the increasingly authoritarian nature of their political systems? Do citizens hold authoritarian governments accountable for economic failures by decreasing their trust in political institutions? This article explores why some countries maintain stable authoritarian regimes, while others struggle with unstable democracies, by considering two key moderating factors: state capacity and democratic quality, including representativeness, accountability, and effectiveness. This thesis argues that when state capacity is high, this autocratization brings a decline in political trust; where state capacity is low, autocratization facilitates the centralization of resources and the establishment of order, and the decline in political trust does not necessarily exist, yet allows authoritarian governments to obtain a higher popular mandate. In sum, this paper aims to explain the persistence of stable authoritarianism and the instability of democratic regimes in the post-Arab Spring era through the lens of public accountability.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">Autocratization, Accountability, State Capacity, Economic Failure, MENA</p>
 
-                <hr>
-                <li><b>Trust in Government in Countries with Muslim Minorities (for MPSA 2025 in Chicago, IL)</b></li>
-           
-                <li><b>Abstract</b></li>
-                <p class="indented">For Muslims, completely separating religion from the public sphere is challenging. This means that Muslims often expect the government to integrate Islamic law, customs, and various aspects of their way of life. In countries where Muslims are the majority, the existence of an Islamic government is generally considered normal. However, in countries where Muslims are not the majority but still constitute a significant portion of the population, are Muslims satisfied with government governance? This study, based on data from the World Values Survey, examines two main hypotheses: the stronger the religious devotion of Muslim minorities, the lower their trust in government; and the lower the trust Muslim minorities have in government, the stronger their belief that the government should enhance religious governance.
+                    <hr>
+                    <li><b>Malaysia's Moderate Diplomacy and the Shift Towards an Islamic State (for EWIS 2025 in Krakow, Poland)</b></li>
+                    <p>with Hung-lin Yeh</p>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        Since Mahathir Mohamad's tenure as Prime Minister (1981–2003), Malaysia has significantly elevated its diplomatic standing under the concept of Moderate Diplomacy. This approach has positioned Malaysia as an influential actor in Middle Eastern affairs and among Islamic countries while maintaining amicable relations with Western nations through its image as a Muslim-majority secular state. However, as Malaysia's engagement with the Islamic world has deepened under the framework of Moderate Diplomacy, mainstream public opinion and political parties have increasingly shifted towards supporting the implementation of Islamic law and the establishment of an Islamic state (Negara Islam). This trend has gradually challenged the constitutional foundation of Malaysia as a secular state. This study argues that while Malaysia's Moderate Diplomacy has expanded its influence within the Islamic world, the broader Islamic revivalist movement has contributed to ideological conflicts with Western countries and intensified domestic political contestation. Opposition parties advocating for Islamization have increasingly challenged the secular ruling establishment. As a result, Malaysia is undergoing a gradual transformation from a secular state towards an Islamic state paradigm, shaped by both international geopolitical dynamics and domestic political struggles.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">Moderate Diplomacy, Negara Islam, Malaysia, Religious Shift, Southeast Asia</p>
+                </ul>
+            </section>
+        </div>
 
-This research aims to reinterpret the perspectives of Muslim minorities towards majority rule in modern democratic states. Using cross-sectional survey regression analysis, I explore the factors that influence political trust among Muslim minorities in minority-status countries..</p>
-                <li><b>Keywords</b></li>
-                <p class="indented">Muslim minorities, majority rule, political trust, religious governance</p>
-                
-                <hr>
-                <li><b>State Capacity, Accountability, and Political Trust in MENA (for MPSA 2025 in Chicago, IL)</b></li>
-                <p>with Seng-Yee Sin and Min-Hua Huang</p>
-                <li><b>Abstract</b></li>
-                <p class="indented">The Middle East and North Africa (MENA) region has seen a resurgence of autocratization in the years following the Arab Spring, with many countries now under leaders who have held power for over a decade, such as Morsi in Egypt, Erdoğan in Turkey, and Saied in Tunisia. In the face of this renewed autocratization, how do the people of the MENA region—who once demanded democratization—feel about the increasingly authoritarian nature of their political systems? Do citizens hold authoritarian governments accountable for economic failures by decreasing their trust in political institutions? This article explores why some countries maintain stable authoritarian regimes, while others struggle with unstable democracies, by considering two key moderating factors: state capacity and democratic quality, including representativeness, accountability, and effectiveness. This thesis argues that when state capacity is high, this autocratization brings a decline in political trust; where state capacity is low, autocratization facilitates the centralization of resources and the establishment of order, and the decline in political trust does not necessarily exist, yet allows authoritarian governments to obtain a higher popular mandate. In sum, this paper aims to explain the persistence of stable authoritarianism and the instability of democratic regimes in the post-Arab Spring era through the lens of public accountability.</p>
-                <li><b>Keywords</b></li>
-                <p class="indented">Autocratization, Accountability, State Capacity, Economic Failure, MENA</p>
-                <hr>
-                <li><b>Malaysia's Moderate Diplomacy and the Shift Towards an Islamic State (for EWIS 2025 in Krakow, Poland)</b></li>
-                <p>with Hung-lin Yeh</p>
-                <li><b>Abstract</b></li>
-                <p class="indented">Since Mahathir Mohamad's tenure as Prime Minister (1981–2003), Malaysia has significantly elevated its diplomatic standing under the concept of Moderate Diplomacy. This approach has positioned Malaysia as an influential actor in Middle Eastern affairs and among Islamic countries while maintaining amicable relations with Western nations through its image as a Muslim-majority secular state. However, as Malaysia's engagement with the Islamic world has deepened under the framework of Moderate Diplomacy, mainstream public opinion and political parties have increasingly shifted towards supporting the implementation of Islamic law and the establishment of an Islamic state (Negara Islam). This trend has gradually challenged the constitutional foundation of Malaysia as a secular state. This study argues that while Malaysia's Moderate Diplomacy has expanded its influence within the Islamic world, the broader Islamic revivalist movement has contributed to ideological conflicts with Western countries and intensified domestic political contestation. Opposition parties advocating for Islamization have increasingly challenged the secular ruling establishment. As a result, Malaysia is undergoing a gradual transformation from a secular state towards an Islamic state paradigm, shaped by both international geopolitical dynamics and domestic political struggles.</p>
-                <li><b>Keywords</b></li>
-                <p class="indented">Moderate Diplomacy, Negara Islam, Malaysia, Religious Shift, Southeast Asia</p>
-            </ul>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2024-2026 Ibrahim Chiu. All Rights Reserved.</p>
-    </footer>
+        <footer>
+            &copy; 2024–2026 Ibrahim Chiu. All Rights Reserved.
+        </footer>
+    </main>
 </body>
 </html>
