@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim Chiu - Data</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #444444;
+            --primary-light: #777777;
+            --bg-page: #F2F2F2;
+            --text-main: #222222;
+            --card-bg: #FFFFFF;
+            --max-width: 1024px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Georgia", "Times New Roman", serif;
+            line-height: 1.7;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+        }
+
+        .top-bar {
+            background: #999999;
+            color: var(--primary);
+            border-bottom: 1px solid #D0D0D0;
+            padding: 14px 0 10px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .top-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .site-title {
+            font-size: 1.9rem;
+            font-weight: normal;
+            margin: 0;
+            letter-spacing: 0.04em;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: 0.95rem;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 4px 6px;
+            border-radius: 4px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background-color: #D6D6D6;
+            color: var(--primary-light);
+        }
+
+        .page-wrapper {
+            max-width: var(--max-width);
+            margin: 80px auto 32px;
+            padding: 0 16px 32px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 6px;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+            padding: 24px 24px 28px;
+            border: 1px solid #E3E3E3;
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                padding: 30px 40px 34px;
+            }
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin: 0 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #CCCCCC;
+            font-weight: normal;
+        }
+
+        h3 {
+            font-size: 1.12rem;
+            font-weight: bold;
+            margin: 0 0 4px;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        .meta-note {
+            font-size: 0.9rem;
+            color: var(--primary-light);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0 16px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        /* ---- dataset-specific ---- */
+        .dataset {
+            border: 1px solid #E3E3E3;
+            border-radius: 6px;
+            padding: 18px 20px 20px;
+            margin-top: 18px;
+            background: #FBFBFB;
+        }
+
+        .dataset-sub {
+            font-size: 0.9rem;
+            color: var(--primary-light);
+            margin: 0 0 14px;
+        }
+
+        table.meta {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            margin: 0 0 16px;
+        }
+
+        table.meta th,
+        table.meta td {
+            text-align: left;
+            vertical-align: top;
+            padding: 7px 10px;
+            border-bottom: 1px solid #ECECEC;
+        }
+
+        table.meta th {
+            width: 30%;
+            font-weight: bold;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 600px) {
+            table.meta th {
+                width: 40%;
+                white-space: normal;
+            }
+        }
+
+        .access-box {
+            margin-top: 10px;
+            background-color: #f1f5f8;
+            border: 1px solid #cfdce4;
+            border-radius: 6px;
+            padding: 12px 14px;
+            font-size: 0.92rem;
+        }
+
+        .access-title {
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .access-title i {
+            color: #5a7a93;
+        }
+
+        .request-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 7px 14px;
+            background: var(--primary);
+            color: #FFFFFF;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .request-btn:hover,
+        .request-btn:focus {
+            background: var(--primary-light);
+            text-decoration: none;
+        }
+
+        .citation {
+            font-size: 0.85rem;
+            color: #555555;
+            background: #F4F4F4;
+            border-left: 3px solid #CCCCCC;
+            padding: 8px 12px;
+            margin-top: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="top-inner">
+            <h1 class="site-title">Ibrahim Chiu</h1>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="research.html">Research</a>
+                <a href="dataset.html">Data</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <div class="card">
+            <section aria-labelledby="data-heading">
+                <h2 id="data-heading">Data</h2>
+                <p>
+                    Below are research datasets I have assembled and processed. They are shared for
+                    academic, non-commercial use, and are <b>available upon request</b> rather than
+                    direct download. If you would like to use any of them, please email me to discuss
+                    access and terms; appropriate citation is required.
+                </p>
+
+                <!-- ===== Dataset 1: Malaysian Hansard ===== -->
+                <article class="dataset" aria-labelledby="hansard-heading">
+                    <h3 id="hansard-heading">Malaysian Parliamentary Hansard Corpus (1981–2025)</h3>
+                    <p class="dataset-sub">
+                        A cleaned, speaker-resolved, bilingual corpus of Malaysian parliamentary
+                        debates, with derived year-level discourse indicators.
+                    </p>
+
+                    <table class="meta">
+                        <tbody>
+                            <tr>
+                                <th>Coverage</th>
+                                <td>1981–2025; Dewan Rakyat (House of Representatives) and Dewan Negara (Senate)</td>
+                            </tr>
+                            <tr>
+                                <th>Source</th>
+                                <td>Official Parliament of Malaysia (Parlimen Malaysia) records</td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td>Malay (primary) and English</td>
+                            </tr>
+                            <tr>
+                                <th>Unit of observation</th>
+                                <td>Speech turn (~1.37 million turns)</td>
+                            </tr>
+                            <tr>
+                                <th>Processing</th>
+                                <td>OCR (Tesseract, msa+eng) for scanned years; idempotent cleaning;
+                                    speaker resolution at ~94% coverage</td>
+                            </tr>
+                            <tr>
+                                <th>Derived measures</th>
+                                <td>Year-level discourse indicator (projection of Islam-related terms
+                                    onto a state-administration ↔ social-autonomy semantic axis);
+                                    per-turn semantic scores; party-camp monthly aggregates</td>
+                            </tr>
+                            <tr>
+                                <th>Format</th>
+                                <td>Parquet and CSV</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>Cleaned and validated; documentation available on request</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="access-box">
+                        <div class="access-title">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <span>Access</span>
+                        </div>
+                        <p style="margin:0;">
+                            This dataset is <b>not available for direct download</b>. It is shared
+                            upon request for academic, non-commercial use. Please email me to
+                            discuss access, intended use, and citation terms.
+                        </p>
+                        <a class="request-btn"
+                           href="mailto:chiu0103@umn.edu?subject=Data%20request%3A%20Malaysian%20Hansard%20Corpus%20(1981%E2%80%932025)&amp;body=Hi%20Ibrahim%2C%0A%0AI%20would%20like%20to%20request%20access%20to%20the%20Malaysian%20Hansard%20Corpus.%0A%0AName%2FAffiliation%3A%0AIntended%20use%3A%0A%0AThank%20you.">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <span>Request access</span>
+                        </a>
+                    </div>
+
+                    <div class="citation">
+                        <b>Suggested citation:</b> Chiu, Yeh-Kang (Ibrahim). Malaysian Parliamentary
+                        Hansard Corpus (1981–2025). [Dataset, available upon request.]
+                    </div>
+                </article>
+                <!-- ===== end Dataset 1 ===== -->
+
+                <p class="meta-note" style="margin-top:18px;">
+                    Last updated: May 2026.
+                </p>
+            </section>
+        </div>
+
+        <footer>
+            &copy; 2024–2026 Ibrahim Chiu. All Rights Reserved.
+        </footer>
+    </main>
+</body>
+</html>
