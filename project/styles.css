@@ -1,0 +1,406 @@
+:root {
+  --ink: #17212b;
+  --muted: #647180;
+  --paper: #f2f0eb;
+  --panel: #fffdfa;
+  --line: #d8d4cc;
+  --green: #1f6b5d;
+  --red: #b7492f;
+  --blue: #275d91;
+  --gold: #9a6a18;
+  --violet: #685a8d;
+  --shadow: 0 20px 60px rgba(23, 33, 43, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
+  background: var(--paper);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  appearance: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.network-stage {
+  padding: 24px clamp(16px, 3.4vw, 46px) 36px;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) auto;
+  gap: 22px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  max-width: 980px;
+  font-size: clamp(2rem, 4.4vw, 4.9rem);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.topbar p {
+  max-width: 900px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 180px 280px;
+  gap: 10px;
+}
+
+.toolbar label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+select,
+input {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 10px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(560px, 1fr) minmax(360px, 460px);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.graph-panel,
+.detail-panel {
+  min-height: 720px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.graph-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+#network {
+  display: block;
+  width: 100%;
+  height: 720px;
+}
+
+.edge {
+  stroke: rgba(100, 113, 128, 0.45);
+  stroke-width: 2;
+}
+
+.edge.highlight {
+  stroke: var(--red);
+  stroke-width: 4;
+}
+
+.edge-label {
+  fill: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  stroke: #fff;
+  stroke-width: 3;
+  filter: drop-shadow(0 7px 10px rgba(23, 33, 43, 0.18));
+  transition: transform 0.18s ease, stroke-width 0.18s ease;
+}
+
+.node:hover circle,
+.node.selected circle {
+  transform: scale(1.08);
+  stroke-width: 5;
+}
+
+.node.dim {
+  opacity: 0.22;
+}
+
+.node text {
+  fill: #fff;
+  font-size: 13px;
+  font-weight: 850;
+  pointer-events: none;
+}
+
+.node text.sub {
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.legend {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: calc(100% - 32px);
+}
+
+.legend span,
+.status-pill,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--line);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.legend i {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 99px;
+}
+
+.hover-card {
+  position: absolute;
+  z-index: 5;
+  display: none;
+  width: min(390px, calc(100% - 28px));
+  max-height: 420px;
+  overflow: auto;
+  padding: 14px;
+  background: rgba(255, 253, 250, 0.98);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 42px rgba(23, 33, 43, 0.2);
+  pointer-events: auto;
+}
+
+.hover-card.visible {
+  display: block;
+}
+
+.hover-card h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.hover-card p {
+  margin: 0 0 9px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.hover-card ul {
+  display: grid;
+  gap: 7px;
+  margin: 8px 0 10px;
+  padding-left: 18px;
+}
+
+.hover-card li {
+  line-height: 1.55;
+}
+
+.hover-card .dialogue {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.hover-card .source-note {
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+}
+
+.detail-panel {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.panel-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.tab {
+  min-height: 46px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: #f8f6f2;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.tab:last-child {
+  border-right: 0;
+}
+
+.tab.active {
+  background: var(--green);
+  color: #fff;
+}
+
+#detailContent {
+  overflow: auto;
+  padding: 18px;
+}
+
+.detail-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+.detail-title h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.detail-title p,
+.record p,
+.note,
+.source-card p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0 16px;
+}
+
+.tag {
+  background: #f7efe4;
+}
+
+.record,
+.source-card,
+.matrix-row {
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #fbfaf7;
+  border: 1px solid var(--line);
+}
+
+.record h3,
+.source-card h3,
+.matrix-row h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.record time {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--red);
+  font-weight: 850;
+}
+
+.quote {
+  padding-left: 12px;
+  border-left: 4px solid var(--red);
+  color: var(--ink);
+}
+
+.matrix-row {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 12px;
+}
+
+.matrix-row strong {
+  color: var(--green);
+}
+
+a {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 20px;
+  border: 1px dashed var(--line);
+}
+
+@media (max-width: 1080px) {
+  .topbar,
+  .main-grid,
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .graph-panel,
+  .detail-panel {
+    min-height: auto;
+  }
+
+  #network {
+    height: 620px;
+  }
+}
+
+@media (max-width: 620px) {
+  .network-stage {
+    padding: 18px 12px 28px;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  #network {
+    height: 520px;
+  }
+
+  .panel-tabs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .matrix-row {
+    grid-template-columns: 1fr;
+  }
+}
