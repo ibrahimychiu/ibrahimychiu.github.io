@@ -56,6 +56,27 @@ const sources = [
     note: "用於補充被害人化名與影像外流後的延續性損害；刑事事實仍以司法院刑事判決為準。"
   },
   {
+    id: "mnews-lantern-2022",
+    title: "鏡新聞：2022祥虎獻瑞慶元宵",
+    kind: "media",
+    url: "https://www.mnews.tw/story/20220215nm014",
+    note: "作為2022花燈作品圖片與作品脈絡來源。"
+  },
+  {
+    id: "yahoo-setn-lantern-2023",
+    title: "Yahoo新聞／三立：2023兔耀福門喜臨春",
+    kind: "media",
+    url: "https://tw.news.yahoo.com/%E6%B7%AB%E5%AF%8C%E5%B0%91%E6%9D%8E%E5%AE%97%E7%91%9E%E8%8A%B1%E7%87%88%E9%80%A32%E5%B9%B4%E5%BE%97%E7%8D%8E-%E5%85%94%E5%B9%B4%E6%8B%BF%E4%BD%B3%E4%BD%9C-%E6%9C%80%E5%BF%AB4%E5%B9%B4%E5%BE%8C%E5%8F%AF%E7%94%B3%E8%AB%8B%E5%81%87%E9%87%8B-134030933.html",
+    note: "作為2023花燈作品圖片與作品脈絡來源。"
+  },
+  {
+    id: "udn-lantern-2024",
+    title: "聯合新聞網：2024普羅民遮慶繁榮",
+    kind: "media",
+    url: "https://travel.udn.com/travel/story/7321/7785795",
+    note: "作為2024花燈作品圖片與台南展出脈絡來源。"
+  },
+  {
     id: "mirror-lantern-2024",
     title: "鏡週刊：李宗瑞燈會作品連3年奪佳績",
     kind: "media",
@@ -102,7 +123,9 @@ const lanternWorks = [
     award: "台北燈節社會大眾組特優",
     context: "李宗瑞入獄後參與花燈製作學習班，首次參賽作品之一。",
     concept: "虎年節慶主題花燈，公開資料主要記錄作品名稱與獎項，創作理念細節較少。",
-    source: "mirror-lantern-2024"
+    source: "mnews-lantern-2022",
+    image: "assets/lanterns/lantern-2022.jpg",
+    imageCredit: "鏡新聞報導配圖"
   },
   {
     id: "lantern-2023",
@@ -111,7 +134,9 @@ const lanternWorks = [
     award: "佳作",
     context: "連續參與花燈競賽的第二年作品。",
     concept: "兔年節慶主題花燈，公開資料主要記錄作品名稱與得獎結果。",
-    source: "mirror-lantern-2024"
+    source: "yahoo-setn-lantern-2023",
+    image: "assets/lanterns/lantern-2023.jpg",
+    imageCredit: "Yahoo新聞／三立報導配圖"
   },
   {
     id: "lantern-2024",
@@ -120,7 +145,9 @@ const lanternWorks = [
     award: "特優",
     context: "與4名獄友共同製作，作品於台南展出。",
     concept: "龍年主題作品。作品名稱以台南城市意象與繁榮慶典為主軸。",
-    source: "mirror-lantern-2024"
+    source: "udn-lantern-2024",
+    image: "assets/lanterns/lantern-2024.jpg",
+    imageCredit: "聯合新聞網報導配圖"
   },
   {
     id: "lantern-2025",
@@ -129,7 +156,9 @@ const lanternWorks = [
     award: "2025台灣燈會全國花燈競賽特優（E055）",
     context: "台北監獄花燈班5名學員共同製作，製程約9個月。",
     concept: "以全球暖化、海洋保護與禪繞繃布技巧為主題，呈現海底世界與環境危機。",
-    source: "tvbs-lantern-2025"
+    source: "tvbs-lantern-2025",
+    image: "assets/lanterns/lantern-2025.jpg",
+    imageCredit: "TVBS報導配圖"
   },
   {
     id: "lantern-2026",
@@ -138,7 +167,9 @@ const lanternWorks = [
     award: "2026台北燈節大型主題燈座類社會大專組特優／北市燈王",
     context: "台北監獄花燈班作品，於台北燈節展出。",
     concept: "以《西遊記》與台北城市景點為發想，呈現三藏師徒取經台北、遊歷城市的畫面。",
-    source: "mirror-daily-lantern-2026"
+    source: "mirror-daily-lantern-2026",
+    image: "assets/lanterns/lantern-2026.jpg",
+    imageCredit: "鏡報報導配圖"
   }
 ];
 
@@ -898,6 +929,7 @@ function renderLanternWorks() {
         <div class="lantern-grid">
           ${lanternWorks.map((work) => `
             <button class="lantern-card ${work.id === selected.id ? "active" : ""}" type="button" data-lantern-id="${work.id}">
+              <img src="${work.image}" alt="${work.year}年花燈作品「${work.title}」" loading="lazy" />
               <span>${work.year}</span>
               <strong>${work.title}</strong>
               <small>${work.award}</small>
@@ -906,6 +938,10 @@ function renderLanternWorks() {
         </div>
       </div>
       <article class="lantern-detail">
+        <figure class="lantern-figure">
+          <img src="${selected.image}" alt="${selected.year}年花燈作品「${selected.title}」" />
+          <figcaption>${selected.imageCredit}</figcaption>
+        </figure>
         <div class="detail-title">
           <div>
             <h2>${selected.title}</h2>
