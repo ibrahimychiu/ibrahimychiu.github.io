@@ -47,6 +47,34 @@ const sources = [
     kind: "media",
     url: "https://www.stheadline.com/realtime-china/1697894/%E6%BA%96%E6%96%B0%E5%A8%98%E9%81%AD%E6%80%A7%E4%BE%B5%E5%81%B7%E6%8B%8D%E7%94%B7%E5%8F%8B%E6%82%94%E5%A9%9A-%E6%9D%8E%E5%AE%97%E7%91%9E%E5%86%8D%E5%88%A4%E8%B3%A053%E8%90%AC",
     note: "用於示範被害人化名與影像外流後的延續性損害。需以司法院民事判決全文再核對。"
+  },
+  {
+    id: "mirror-lantern-2024",
+    title: "鏡週刊：李宗瑞燈會作品連3年奪佳績",
+    kind: "media",
+    url: "https://www.mirrormedia.mg/story/20240222edi043",
+    note: "整理2022、2023、2024花燈作品名稱與獎項。"
+  },
+  {
+    id: "tvbs-lantern-2025",
+    title: "TVBS：自在．悠游獲2025台灣燈會特優",
+    kind: "media",
+    url: "https://news.tvbs.com.tw/local/2776682",
+    note: "說明2025作品自在．悠游、E055、製作歷程與環境保護理念。"
+  },
+  {
+    id: "cnews-lantern-2025",
+    title: "匯流新聞網：自在．悠游創作理念",
+    kind: "media",
+    url: "https://cnews.com.tw/224250212a01/",
+    note: "補充自在．悠游以全球暖化、海洋與禪繞元素為創作理念。"
+  },
+  {
+    id: "mirror-daily-lantern-2026",
+    title: "鏡報：嬉遊臺北與駿馬歡騰慶豐年",
+    kind: "media",
+    url: "https://www.mirrordaily.news/story/47605",
+    note: "說明2026台北燈節作品嬉遊臺北 - Chill Taipei，以及另參與作品駿馬歡騰慶豐年。"
   }
 ];
 
@@ -58,6 +86,54 @@ const categories = {
   tech: { label: "科技/證據", color: "#275d91" },
   media: { label: "媒體/平台", color: "#685a8d" }
 };
+
+const lanternWorks = [
+  {
+    id: "lantern-2022",
+    year: "2022",
+    title: "祥虎獻瑞慶元宵",
+    award: "台北燈節社會大眾組特優",
+    context: "李宗瑞入獄後參與花燈製作學習班，首次參賽作品之一。",
+    concept: "虎年節慶主題花燈，公開資料主要記錄作品名稱與獎項，創作理念細節較少。",
+    source: "mirror-lantern-2024"
+  },
+  {
+    id: "lantern-2023",
+    year: "2023",
+    title: "兔耀福門喜臨春",
+    award: "佳作",
+    context: "連續參與花燈競賽的第二年作品。",
+    concept: "兔年節慶主題花燈，公開資料主要記錄作品名稱與得獎結果。",
+    source: "mirror-lantern-2024"
+  },
+  {
+    id: "lantern-2024",
+    year: "2024",
+    title: "普羅民遮慶繁榮（龍）",
+    award: "特優",
+    context: "與4名獄友共同製作，作品於台南展出。",
+    concept: "龍年主題作品。作品名稱以台南城市意象與繁榮慶典為主軸。",
+    source: "mirror-lantern-2024"
+  },
+  {
+    id: "lantern-2025",
+    year: "2025",
+    title: "自在．悠游",
+    award: "2025台灣燈會全國花燈競賽特優（E055）",
+    context: "台北監獄花燈班5名學員共同製作，製程約9個月。",
+    concept: "以全球暖化、海洋保護與禪繞繃布技巧為主題，呈現海底世界與環境危機。",
+    source: "tvbs-lantern-2025"
+  },
+  {
+    id: "lantern-2026",
+    year: "2026",
+    title: "嬉遊臺北 - Chill Taipei",
+    award: "2026台北燈節大型主題燈座類社會大專組特優／北市燈王",
+    context: "台北監獄花燈班作品，於台北燈節展出。",
+    concept: "以《西遊記》與台北城市景點為發想，呈現三藏師徒取經台北、遊歷城市的畫面。",
+    source: "mirror-daily-lantern-2026"
+  }
+];
 
 const nodes = [
   {
@@ -616,6 +692,7 @@ const state = {
   tab: "profile",
   layer: "all",
   query: "",
+  selectedLanternId: "lantern-2026",
   hoverCloseTimer: null,
   hoverLocked: false
 };
@@ -796,6 +873,40 @@ function renderProfile(node) {
         return `<p><strong>${other.label}</strong>：${edge.label}</p>`;
       }).join("") || `<p>無直接連結。</p>`}
     </div>
+    ${node.id === "lee" ? renderLanternWorks() : ""}
+  `;
+}
+
+function renderLanternWorks() {
+  const selected = lanternWorks.find((work) => work.id === state.selectedLanternId) || lanternWorks[0];
+  return `
+    <section class="lantern-section" aria-label="花燈作品">
+      <div class="record">
+        <h3>服刑期間花燈作品</h3>
+        <p>此區呈現公開報導中的後續社會敘事：技能教化、矯正制度與公共觀感。它不改變前述犯罪事實與司法判斷。</p>
+        <div class="lantern-grid">
+          ${lanternWorks.map((work) => `
+            <button class="lantern-card ${work.id === selected.id ? "active" : ""}" type="button" data-lantern-id="${work.id}">
+              <span>${work.year}</span>
+              <strong>${work.title}</strong>
+              <small>${work.award}</small>
+            </button>
+          `).join("")}
+        </div>
+      </div>
+      <article class="lantern-detail">
+        <div class="detail-title">
+          <div>
+            <h2>${selected.title}</h2>
+            <p>${selected.year} · ${selected.award}</p>
+          </div>
+          <span class="status-pill">花燈作品</span>
+        </div>
+        <p><strong>製作/展出脈絡：</strong>${selected.context}</p>
+        <p><strong>作品主題：</strong>${selected.concept}</p>
+        <p>來源：${sourceLink(selected.source)}</p>
+      </article>
+    </section>
   `;
 }
 
@@ -876,6 +987,16 @@ function renderDetail() {
   if (state.tab === "sentencing") html = renderSentencing();
   if (state.tab === "sources") html = renderSources();
   document.querySelector("#detailContent").innerHTML = html;
+  wireLanternCards();
+}
+
+function wireLanternCards() {
+  document.querySelectorAll(".lantern-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      state.selectedLanternId = card.dataset.lanternId;
+      renderDetail();
+    });
+  });
 }
 
 function renderTabs() {

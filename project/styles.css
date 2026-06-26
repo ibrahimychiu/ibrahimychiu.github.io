@@ -366,6 +366,64 @@ a {
   border: 1px dashed var(--line);
 }
 
+.lantern-section {
+  display: grid;
+  gap: 12px;
+}
+
+.lantern-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.lantern-card {
+  display: grid;
+  gap: 5px;
+  min-height: 108px;
+  padding: 12px;
+  text-align: left;
+  color: var(--ink);
+  background: #f8f1e8;
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.lantern-card:hover,
+.lantern-card.active {
+  border-color: var(--gold);
+  background: #fff7e6;
+}
+
+.lantern-card span {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.lantern-card strong {
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.lantern-card small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.lantern-detail {
+  padding: 16px;
+  background: #fffaf0;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 28px rgba(31, 41, 51, 0.06);
+}
+
+.lantern-detail p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 @media (max-width: 1080px) {
   .topbar,
   .main-grid,
@@ -401,6 +459,10 @@ a {
   }
 
   .matrix-row {
+    grid-template-columns: 1fr;
+  }
+
+  .lantern-grid {
     grid-template-columns: 1fr;
   }
 }
