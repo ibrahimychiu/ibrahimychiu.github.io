@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; object-src 'none'; media-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Ibrahim Chiu - Home</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        :root {
+            --primary: #444444;
+            --primary-light: #777777;
+            --bg-page: #F2F2F2;
+            --text-main: #222222;
+            --card-bg: #FFFFFF;
+            --max-width: 1024px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Georgia", "Times New Roman", serif;
+            line-height: 1.7;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+        }
+
+        .top-bar {
+            background: #999999;
+            color: var(--primary);
+            border-bottom: 1px solid #D0D0D0;
+            padding: 14px 0 10px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .top-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .site-title {
+            font-size: 1.9rem;
+            font-weight: normal;
+            margin: 0;
+            letter-spacing: 0.04em;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: 0.95rem;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 4px 6px;
+            border-radius: 4px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background-color: #D6D6D6;
+            color: var(--primary-light);
+        }
+
+        .page-wrapper {
+            max-width: var(--max-width);
+            margin: 80px auto 32px;
+            padding: 0 16px 32px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 6px;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+            padding: 24px 24px 28px;
+            border: 1px solid #E3E3E3;
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                padding: 30px 40px 34px;
+            }
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin: 0 0 16px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #CCCCCC;
+            font-weight: normal;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        .meta-note {
+            font-size: 0.9rem;
+            color: var(--primary-light);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0 16px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        .about-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .about-photo {
+            flex: 0 0 150px;
+        }
+
+        .about-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .contact-block {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.9rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-link i {
+            font-size: 1rem;
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+            text-decoration: underline;
+        }
+
+        .about-text {
+            flex: 1 1 260px;
+            min-width: 0;
+        }
+
+        @media (max-width: 600px) {
+            .about-layout {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .about-photo {
+                flex: 0 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="top-inner">
+            <h1 class="site-title">Ibrahim Chiu</h1>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="research.html">Research</a>
+                <a href="dataset.html">Data</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <div class="card">
+            <section aria-labelledby="about-heading">
+                <h2 id="about-heading">About Me</h2>
+
+                <div class="about-layout">
+                    <div class="about-photo">
+                        <img src="headshot.jpg" alt="Portrait of Ibrahim Chiu">
+
+                        <div class="contact-block">
+                            <a href="mailto:chiu0103@umn.edu" class="contact-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                                <span>chiu0103 [at] UMN</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/yehkangchiu/en"
+                               class="contact-link" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="about-text">
+                        <p>
+                            I am <a href="https://cla.umn.edu/about/directory/profile/chiu0103">Ibrahim Chiu</a> (he/him), a Ph.D. Candidate in
+                            <a href="https://cla.umn.edu/polisci">the Department of Political Science</a> at
+                            <a href="https://twin-cities.umn.edu/">the University of Minnesota Twin Cities</a> (2022–present),
+                            specializing in comparative politics and methodology.
+                        </p>
+
+                        <p>
+                            My research interests lie in religion and politics, particularly the impact of modernization and its backlashes,
+                            and how religions adapt to or resist modernity. My core topics are political Islam, religious-right, political violence,
+                            and the intersection of religion and ethnicity. In 2024, I served as a research assistant to my advisor,
+                            Dr. <a href="https://cla.umn.edu/about/directory/profile/colli433">Kathleen Collins</a>, examining jihadism and Islamic
+                            radicalization in the Middle East and Central Asia.
+                        </p>
+
+                        <p>
+                            In terms of methodology, I focus on mixed methods and causal inference. My work involves employing statistical techniques
+                            to triangulate causal hypotheses derived from qualitative research, conducting causal inference analyses using
+                            time-series cross-sectional (TSCS) data from large-scale surveys such as the
+                            <a href="https://www.asianbarometer.org/">Asian Barometer</a>, and utilizing spatial data to assess the causal effects
+                            of conflicts and policies. Currently, I am applying <a href="research.html">text analysis to study moral anxiety and religious rhetoric</a> based on
+                            the <a href="dataset.html">Parliamentary Hansard of Malaysia</a> and various social media platforms.
+                        </p>
+
+                        <p>
+                            Before moving to the Twin Cities, I was a policy researcher at an education think tank while lecturing in the humanities
+                            at several private institutions in Hsinchu City, Taiwan. I earned my BA in 2017 and my MA in 2020, both from
+                            <a href="https://politics.ntu.edu.tw/">the Department of Political Science at National Taiwan University</a> (NTU)
+                            in Taipei, Taiwan.
+                        </p>
+
+                        <p>
+                            Beyond research and teaching, I am a fan of the
+                            <a href="https://www.fubonguardians.com/content/masterpage/Index">Fubon Guardians</a> (since 2003, formerly the Sinon Bulls)
+                            baseball team in the <a href="https://www.cpbl.com.tw/">Chinese Professional Baseball League</a> (CPBL) of Taiwan,
+                            and an amateur baseball player. Additionally, I have been trained for more than a decade as a classical pianist.
+                            Born in Guanshan, Taiwan, I consider Metro Taipei, where I grew up, my hometown.
+                        </p>
+
+                        <p class="meta-note">
+                            Last updated: Jan. 17 2026.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            &copy; 2024–2026 Ibrahim Chiu. All Rights Reserved.
+        </footer>
+    </main>
+</body>
+</html>

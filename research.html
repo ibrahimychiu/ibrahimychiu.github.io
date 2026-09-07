@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; object-src 'none'; media-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Ibrahim Chiu - Research</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        :root {
+            --primary: #444444;
+            --primary-light: #777777;
+            --bg-page: #F2F2F2;
+            --text-main: #222222;
+            --card-bg: #FFFFFF;
+            --max-width: 1024px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Georgia", "Times New Roman", serif;
+            line-height: 1.7;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+        }
+
+        .top-bar {
+            background: #999999;
+            color: var(--primary);
+            border-bottom: 1px solid #D0D0D0;
+            padding: 14px 0 10px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .top-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .site-title {
+            font-size: 1.9rem;
+            font-weight: normal;
+            margin: 0;
+            letter-spacing: 0.04em;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: 0.95rem;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 4px 6px;
+            border-radius: 4px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background-color: #D6D6D6;
+            color: var(--primary-light);
+        }
+
+        .page-wrapper {
+            max-width: var(--max-width);
+            margin: 80px auto 32px;
+            padding: 0 16px 32px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 6px;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+            padding: 24px 24px 28px;
+            border: 1px solid #E3E3E3;
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                padding: 30px 40px 34px;
+            }
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin: 0 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #CCCCCC;
+            font-weight: normal;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin: 10px 0 4px;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        .indented {
+            margin-left: 2em;
+            color: var(--primary);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0 16px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #DDDDDD;
+            margin: 18px 0;
+        }
+
+        figure.research-fig {
+            margin: 14px 0 6px;
+            text-align: center;
+        }
+
+        .fig-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 14px 0 6px;
+        }
+
+        .fig-row figure.research-fig {
+            flex: 1 1 300px;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .fig-row figure.research-fig img {
+            width: 100%;
+        }
+
+        figure.research-fig img {
+            max-width: 100%;
+            width: 540px;
+            height: auto;
+            border: 1px solid #DDDDDD;
+            border-radius: 4px;
+            background: #FFFFFF;
+        }
+
+        figure.research-fig.wide img {
+            width: 100%;
+            max-width: 880px;
+        }
+
+        figure.research-fig figcaption {
+            font-size: 0.8rem;
+            color: #777777;
+            margin-top: 6px;
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="top-inner">
+            <h1 class="site-title">Ibrahim Chiu</h1>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="research.html">Research</a>
+                <a href="dataset.html">Data</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <div class="card">
+            <section aria-labelledby="research-heading">
+                <h2 id="research-heading">Research</h2>
+                <p>Here are some of my recent and ongoing projects:</p>
+
+                <ul>
+                    <hr>
+                    <li><b>When Co-optation Backfires: The Islamization Race in Malaysia (1980s–1990s) (for APSA 2026 in Boston, MA)</b></li>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        How do authoritarian parties respond to ideological challenges posed by religious opposition? While existing literature predominantly focuses on repression or concession, it rarely explores mechanisms of mimicry at the discursive level. Using Malaysia as a case study, this article investigates why the United Malays National Organisation (UMNO)—a long-ruling party championing Malay supremacy—failed to neutralize the threat of the Pan-Malaysian Islamic Party (PAS) through co-optation, but instead catalyzed the Islamization of state institutions. I argue that moral panic from the middle class and the global Islamic revival compelled UMNO to engage in reclaiming/redefining national Islam. By attempting to contest legitimacy through replicating PAS's religious rhetoric, this strategy resulted in a structural convergence of discourse between the two parties. Employing a text-as-data approach on parliamentary debate records, the Hansard, from 1979 to 1998, this study calculates the cosine similarity of the two parties' political rhetoric within an Islamic subspace. Preliminary results indicate a discursive convergence emerging since early 80s. This confirms that while authoritarian parties may proactively appropriate a competitor's language for survival, this strategy ultimately creates an irreversible space for Islamic expansion within the state apparatus.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">co-optation, Islamization, authoritarian resilience, text-as-data, discursive convergence</p>
+                    <div class="fig-row">
+                        <figure class="research-fig">
+                            <a href="figures/fig_hansard_semantic.png" target="_blank" rel="noopener noreferrer">
+                                <img src="figures/fig_hansard_semantic.png" alt="Semantic-axis projection of UMNO and PAS Islam rhetoric over time">
+                            </a>
+                            <figcaption>Semantic trend: UMNO frames "Islam" administratively while PAS frames it theologically — mean projection of each party's Islam-context speech onto a data-driven UMNO–PAS semantic axis (paired-anchor LSS over yearly Hansard, 1990–2024).</figcaption>
+                        </figure>
+                        <figure class="research-fig">
+                            <a href="figures/fig_hansard_wordfreq.png" target="_blank" rel="noopener noreferrer">
+                                <img src="figures/fig_hansard_wordfreq.png" alt="Top UMNO- and PAS-distinctive context words around Islam">
+                            </a>
+                            <figcaption>Lexical signature: the most UMNO- vs. PAS-distinctive context words around "Islam" (weighted log-odds, Monroe et al.).</figcaption>
+                        </figure>
+                    </div>
+
+                    <hr>
+                    <li><b>Islamic Labs? Sub-National Islamization in Malaysia and Its Spillover Effects (for MPSA 2026 in Chicago, IL)</b></li>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        Why was PAS able to ride the anti-UMNO backlash in the 2022 "Green Wave" even when UMNO's material co-optation still appeared intact? This paper leverages constituency-level data from Malaysia's 15th general election (GE15), combining Ecological Inference with a Spatial Durbin Model (SDM) to estimate Malay vote defection from UMNO/BN to PAS/PN and to trace how this surge diffused in geographic space. The results show that digital penetration amplifies defection only where UMNO's local machinery has already thinned, supporting a conditional "digital magnification" mechanism rather than a generic "youth or technology" story. Substantively, UMNO's long-standing strategy of fusing material patronage with a bureaucratized Islamic apparatus built a durable yet spatially uneven firewall, while PAS's pondok and mosque-based networks accumulated autonomous symbolic capital as a more credible Islamic pole outside the state. Empirically, the sharpest breakthroughs did not occur in PAS's traditional heartland but in distant, UMNO-dominated urban constituencies where frustration with the moral bankruptcy of official Islam had quietly accumulated and where loyalty could be sustained only through material side-payments; a large and highly significant spatial lag term further reveals strong contagion, indicating that the Green Wave was not an aggregation of isolated upsets but a chain reaction of reverse diffusion enabled by digital time-space compression. Theoretically, the paper bridges co-optation and Islamization-race scholarship with work on digital mobilization and diffusion, showing how bureaucratic co-optation of religion generates a moral deficit that, under conditions of digital time-space compression, allows peripheral Islamic symbolic capital to spearhead a conservative realignment and a delayed authoritarian breakdown from the periphery back to the core.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">Green Wave, co-optation, digital space-time compression, reverse diffusion, political Islam</p>
+                    <figure class="research-fig wide">
+                        <a href="figures/fig_pas_changes_panel.png" target="_blank" rel="noopener noreferrer">
+                            <img src="figures/fig_pas_changes_panel_web.png" alt="Constituency-level change in PAS vote share across Peninsular Malaysia over seven election cycles, 1990 to 2022">
+                        </a>
+                        <figcaption>Inter-election change in PAS vote share across Peninsular Malaysia over seven cycles (1990–2022); blue = gains, red = losses. The final 2018→2022 panel captures the "Green Wave" diffusing well beyond the East-Coast heartland. Base data: Malaysian Election Corpus (MECo).</figcaption>
+                    </figure>
+
+                    <hr>
+                    <li><b>Trust in Government in Countries with Muslim Minorities (for MPSA 2025 in Chicago, IL)</b></li>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        For Muslims, completely separating religion from the public sphere is challenging. This means that Muslims often expect the government to integrate Islamic law, customs, and various aspects of their way of life. In countries where Muslims are the majority, the existence of an Islamic government is generally considered normal. However, in countries where Muslims are not the majority but still constitute a significant portion of the population, are Muslims satisfied with government governance? This study, based on data from the World Values Survey, examines two main hypotheses: the stronger the religious devotion of Muslim minorities, the lower their trust in government; and the lower the trust Muslim minorities have in government, the stronger their belief that the government should enhance religious governance.
+                        <br><br>
+                        This research aims to reinterpret the perspectives of Muslim minorities towards majority rule in modern democratic states. Using cross-sectional survey regression analysis, I explore the factors that influence political trust among Muslim minorities in minority-status countries.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">Muslim minorities, majority rule, political trust, religious governance</p>
+                    <div class="fig-row">
+                        <figure class="research-fig">
+                            <a href="figures/fig_trust_coef.png" target="_blank" rel="noopener noreferrer">
+                                <img src="figures/fig_trust_coef.png" alt="Regression coefficient estimates comparing political-trust determinants for Muslim majorities versus minorities">
+                            </a>
+                            <figcaption>Determinants of political trust, estimated separately for Muslim-majority and Muslim-minority respondents; point estimates with 95% confidence intervals (World Values Survey).</figcaption>
+                        </figure>
+                        <figure class="research-fig">
+                            <a href="figures/fig_trust_predicted.png" target="_blank" rel="noopener noreferrer">
+                                <img src="figures/fig_trust_predicted.png" alt="Predicted political trust as a function of pro-democratic attitudes, by minority status">
+                            </a>
+                            <figcaption>Predicted political trust as a function of pro-democratic attitudes, split by Muslim-minority (solid) vs. majority (dashed) status.</figcaption>
+                        </figure>
+                    </div>
+
+                    <hr>
+                    <li><b>State Capacity, Accountability, and Political Trust in MENA (for MPSA 2025 in Chicago, IL)</b></li>
+                    <p>with Seng-Yee Sin and Min-Hua Huang</p>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        The Middle East and North Africa (MENA) region has seen a resurgence of autocratization in the years following the Arab Spring, with many countries now under leaders who have held power for over a decade, such as Morsi in Egypt, Erdoğan in Turkey, and Saied in Tunisia. In the face of this renewed autocratization, how do the people of the MENA region—who once demanded democratization—feel about the increasingly authoritarian nature of their political systems? Do citizens hold authoritarian governments accountable for economic failures by decreasing their trust in political institutions? This article explores why some countries maintain stable authoritarian regimes, while others struggle with unstable democracies, by considering two key moderating factors: state capacity and democratic quality, including representativeness, accountability, and effectiveness. This thesis argues that when state capacity is high, this autocratization brings a decline in political trust; where state capacity is low, autocratization facilitates the centralization of resources and the establishment of order, and the decline in political trust does not necessarily exist, yet allows authoritarian governments to obtain a higher popular mandate. In sum, this paper aims to explain the persistence of stable authoritarianism and the instability of democratic regimes in the post-Arab Spring era through the lens of public accountability.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">Autocratization, Accountability, State Capacity, Economic Failure, MENA</p>
+
+                    <hr>
+                    <li><b>Malaysia's Moderate Diplomacy and the Shift Towards an Islamic State (for EWIS 2025 in Krakow, Poland)</b></li>
+                    <p>with Hung-lin Yeh</p>
+                    <li><b>Abstract</b></li>
+                    <p class="indented">
+                        Since Mahathir Mohamad's tenure as Prime Minister (1981–2003), Malaysia has significantly elevated its diplomatic standing under the concept of Moderate Diplomacy. This approach has positioned Malaysia as an influential actor in Middle Eastern affairs and among Islamic countries while maintaining amicable relations with Western nations through its image as a Muslim-majority secular state. However, as Malaysia's engagement with the Islamic world has deepened under the framework of Moderate Diplomacy, mainstream public opinion and political parties have increasingly shifted towards supporting the implementation of Islamic law and the establishment of an Islamic state (Negara Islam). This trend has gradually challenged the constitutional foundation of Malaysia as a secular state. This study argues that while Malaysia's Moderate Diplomacy has expanded its influence within the Islamic world, the broader Islamic revivalist movement has contributed to ideological conflicts with Western countries and intensified domestic political contestation. Opposition parties advocating for Islamization have increasingly challenged the secular ruling establishment. As a result, Malaysia is undergoing a gradual transformation from a secular state towards an Islamic state paradigm, shaped by both international geopolitical dynamics and domestic political struggles.
+                    </p>
+                    <li><b>Keywords</b></li>
+                    <p class="indented">Moderate Diplomacy, Negara Islam, Malaysia, Religious Shift, Southeast Asia</p>
+                </ul>
+            </section>
+        </div>
+
+        <footer>
+            &copy; 2024–2026 Ibrahim Chiu. All Rights Reserved.
+        </footer>
+    </main>
+</body>
+</html>
